@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Exec=/bin/python3 /home/rcws/.can_setup.py
+Hidden=false
+NoDisplay=false
+X-GNOME-Autostart-enabled=true
+Name[ko_KR]=can setup
+Name=test
+Comment[ko_KR]=can auto setup
+Comment=test
