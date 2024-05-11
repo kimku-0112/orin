@@ -2,9 +2,9 @@
 #include "comm_thread.h"
 
 
-void UART_Init(struct termios &uart_config, int &uart)
+void UART_Init(struct termios &uart_config, int &uart, const char* serial_port)
 {
-    uart = open(SERIAL_PORT, O_RDWR | O_NOCTTY | O_NDELAY);
+    uart = open(serial_port, O_RDWR | O_NOCTTY | O_NDELAY);
     if (uart == -1)
     {
         perror("Unable to open UART port");

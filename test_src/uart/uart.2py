@@ -3,7 +3,7 @@ import serial
 import time
 
 # Open serial port
-ser = serial.Serial('/dev/ttyTHS1', 115200, timeout=1)
+ser = serial.Serial('/dev/ttyUSB0', 115200, timeout=1)
 
 # Check if the serial port is open
 if ser.is_open:

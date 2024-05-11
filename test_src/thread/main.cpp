@@ -1,4 +1,6 @@
 #include "comm_thread.h"
+#define SERIAL_PORT "/dev/ttyUSB0"
+// #define SERIAL_PORT /deb/ttyTHS0
 
 int main()
 {
@@ -6,7 +8,7 @@ int main()
 
     struct termios uart_config;
     int uart;
-    UART_Init(uart_config, uart);
+    UART_Init(uart_config, uart, SERIAL_PORT);
 
     int sock;
     struct can_frame frame;
@@ -18,9 +20,9 @@ int main()
     std::thread write_canfd_thread(process_write_canfd_thread, std::ref(mtx), std::ref(frame), std::ref(sock));
 
     read_uart_thread.join();
-    write_uart_thread.join();
+    // write_uart_thread.join();
     read_canfd_thread.join();
-    write_canfd_thread.join();
+    // write_canfd_thread.join();
 
     return 0;
 }

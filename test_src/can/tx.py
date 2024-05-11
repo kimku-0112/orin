@@ -37,8 +37,9 @@ def send_can_fd_msg(channel='can0', message_id=0x640, data=b'RCWS CAN TE CAN-FD!
 
 if __name__ == "__main__":
     configure_can_fd()	
+    sleep(1)
     for i in range (100):
    	    send_can_fd_msg(channel='can0', message_id=0x500+i,data=b'RCWS CAN T%d CAN-FD!' %i)
-   	    sleep(0.033)
+   	    sleep(1)
      
 

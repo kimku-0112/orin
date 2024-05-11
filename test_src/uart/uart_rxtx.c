@@ -8,7 +8,7 @@
 #include <termios.h>
 #include <string.h>
 
-#define SERIAL_PORT "/dev/ttyTHS0" // UART device file
+#define SERIAL_PORT "/dev/ttyUSB0" // UART device file
 
 int main() {
     int uart_fd,i;

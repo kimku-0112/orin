@@ -16,9 +16,7 @@
 #include <cstring>
 #include <mutex>
 
-#define SERIAL_PORT "/dev/ttyTHS1"
-
-void UART_Init(struct termios &uart_config, int &uart);
+void UART_Init(struct termios &uart_config, int &uart, const char* serial_port);
 void CANFD_Init(struct can_frame &frame, int &sock);
 
 void write_uart(struct termios &uart_config, int &uart, char *buffer, int len);
