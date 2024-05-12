@@ -9,10 +9,11 @@ camera_thread::camera_thread(cv::VideoCapture *videocap)
 void camera_thread::run(){
     while(1){
         if(UpdateFlag){
-            UpdateFlag = false;
-            *cap>>frame;
+            if(cap->read(frame)){
+                UpdateFlag = false;
+            }
         }
-        msleep(2);
+        msleep(20);
     }
 
 }
