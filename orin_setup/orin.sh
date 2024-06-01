@@ -65,7 +65,7 @@ su - rcws -c "dbus-run-session gsettings set org.gnome.Vino vnc-password $(echo 
 
  #Serial setup
 echo "serial setup"
-su -rcws -c "pip install pyserial"
+su - rcws -c "pip install pyserial"
 sudo usermod -a -G dialout rcws
 sudo chmod a+rw /dev/ttyTHS*
 sudo touch /etc/udev/rules.d/99-ttyths.rules
